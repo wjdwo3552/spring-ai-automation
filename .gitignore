@@ -35,3 +35,28 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Environment Variables ###
+.env
+*.env
+.env.local
+.env.*.local
+
+### macOS ###
+.DS_Store
+
+### Windows ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+### Logs ###
+*.log
+logs/
+
+### Temporary files ###
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
