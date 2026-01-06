@@ -1,3 +1,23 @@
 spring:
   application:
     name: automation-server
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-4-turbo-preview
+          temperature: 0.7
+          max-tokens: 2000
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.ai: DEBUG
+    com.example.automation: DEBUG
