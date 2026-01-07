@@ -40,8 +40,8 @@ dependencies {
     implementation 'org.springframework.ai:spring-ai-openai-spring-boot-starter'
 
     // Document Readers (문서 요약용)
-    // implementation 'org.springframework.ai:spring-ai-pdf-document-reader'
-    // implementation 'org.springframework.ai:spring-ai-tika-document-reader'
+    implementation 'org.springframework.ai:spring-ai-pdf-document-reader'
+    implementation 'org.springframework.ai:spring-ai-tika-document-reader'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok'
@@ -50,6 +50,15 @@ dependencies {
     // Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'org.apache.poi:poi-ooxml:5.4.0'
+        force 'org.apache.tika:tika-core:3.2.0'
+        force 'org.apache.tika:tika-parser-pdf-module:3.2.0'
+        force 'org.bouncycastle:bcpkix-jdk18on:1.79'
+    }
 }
 
 tasks.named('test') {
